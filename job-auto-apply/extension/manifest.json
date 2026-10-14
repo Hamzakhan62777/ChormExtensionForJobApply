@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Free AI Job Auto-Apply",
+  "version": "1.0",
+  "description": "One-click Email & Job Auto-Apply for LinkedIn and Indeed.",
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "https://*.indeed.com/*",
+    "http://127.0.0.1:8000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.linkedin.com/*",
+        "https://*.indeed.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
